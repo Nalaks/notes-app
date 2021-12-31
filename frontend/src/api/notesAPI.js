@@ -1,5 +1,5 @@
-import axios from "axios";
-import { NOTEURL } from "../constants/constant";
+import axios from 'axios';
+import { NOTEURL } from '../constants/constant';
 
 const getNotes = async () => {
   try {

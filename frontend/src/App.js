@@ -1,10 +1,10 @@
-import "./App.css";
-import Note from "./components/Note";
-import React, { useState, useEffect } from "react";
-import getNotes from "./api/notesAPI";
-import axios from "axios";
-import { NOTEURL } from "./constants/constant";
-import Notification from "./components/Notification";
+import './App.css';
+import Note from './components/Note';
+import React, { useState, useEffect } from 'react';
+import getNotes from './api/notesAPI';
+import axios from 'axios';
+import { NOTEURL } from './constants/constant';
+import Notification from './components/Notification';
 
 const App = () => {
   const [notes, setNotes] = useState();
@@ -12,7 +12,7 @@ const App = () => {
   const [filteredNotes, setFilteredNotes] = useState();
   const [errorMessage, setErrorMessage] = useState();
 
-  const notesToShow = showImportant
+  const notesToShow = showImportan
     ? notes.filter((note) => note.important)
     : filteredNotes
     ? filteredNotes
@@ -35,9 +35,9 @@ const App = () => {
       setFilteredNotes(null);
     } catch (error) {
       console.log(error);
-      handleError("Server is not responding, please try again later");
+      handleError('Server is not responding, please try again later');
     }
-    e.target.content.value = "";
+    e.target.content.value = '';
     e.target.important.checked = false;
   };
 
@@ -45,7 +45,7 @@ const App = () => {
     e.preventDefault();
     const search = e.target.value.toLowerCase();
     const newNotes = notes.filter((note) =>
-      note.content.toLowerCase().includes(search)
+      note.content.toLowerCase().includes(search),
     );
     setFilteredNotes(newNotes);
   };
@@ -58,7 +58,7 @@ const App = () => {
       populateNotes();
     } catch (error) {
       console.log(error);
-      handleError("Server is not responding, please try again later");
+      handleError('Server is not responding, please try again later');
     }
   };
 
@@ -102,7 +102,7 @@ const App = () => {
       <form onSubmit={addNote}>
         <input type="text" name="content" />
         <label htmlFor="important">
-          {" "}
+          {' '}
           important
           <input type="checkbox" name="important" />
         </label>
